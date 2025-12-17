@@ -240,3 +240,10 @@ padding-left:20px;
 
 .tab-content h2 { border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
 .tab-content p { font-size: 16px; margin: 12px 0; font-weight: 500; }
+
+/* Increase GUI height for small screens (mobile) */
+@media (max-width: 600px) {
+    .gui-wrapper {
+        height: 600px; /* increase height as needed */
+    }
+}
