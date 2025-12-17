@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteriCUBE GUI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="gui-wrapper">
+        <div class="gui-container" id="mainContainer">
+            
+            <div class="tabs">
+                
+                <div class="stack-background">
+                    <div class="stack-layer purple"></div> <div class="stack-layer pink"></div>
+                    <div class="stack-layer orange"></div>
+                </div>
+
+                <!-- Cube Contents tab -->
+                <button class="tab-btn active" onclick="openTab(event, 'cube-contents')" data-color="#fdd835">
+                    <span>CUBE<br>Contents</span>
+                </button>
+
+                <!-- Surgery Info tab -->
+                <button class="tab-btn" onclick="openTab(event, 'surgery-info')" data-color="#fb8c00">
+                    <span>Surgery<br>Info</span>
+                </button>
+
+                <button class="tab-btn" onclick="openTab(event, 'sterility-info')" data-color="#f48fb1">
+                    <span>Sterility<br>Info</span>
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'cube-log')" data-color="#9575cd">
+                    <span>CUBE<br>Log</span>
+                </button>
+            </div>
+
+            <div id="cube-contents" class="tab-content" style="display: block;">
+                <div class="tab-content-with-image">
+                    <div class="tab-text">
+                        <h2>Contents</h2>
+                        <ul>
+                            <li>Femoral preparation tray</li>
+                            <li>Femoral trial tray</li>
+                            <li>Tibial preparation tray</li>
+                            <li>Tibial stem tray</li>
+                            <li>Tibial insert trial tray</li>
+                            <li>Patella preparation tray</li>
+                        </ul>
+                    </div>
+                    <div>
+                    <img src="tools.png" alt="tools" class="tab-side-image">
+                    </div>
+                </div>
+                <img src="logo.png" alt="Logo" class="tab-logo">
+            </div>
+
+
+
+
+            <div id="surgery-info" class="tab-content">
+                <p><strong>Patient identification (MRN):</strong> #34567</p>
+                <p><strong>Procedure:</strong> TKA (right)</p>
+                <p><strong>Surgeon:</strong> Stevenson, M</p>
+                <p><strong>Date:</strong> 2/23/2027</p>
+                <p><strong>Time:</strong> 7:30 am</p>
+                <p><strong>OR:</strong> 1</p>
+                <img src="logo.png" alt="Logo" class="tab-logo">
+            </div>
+
+
+            <div id="sterility-info" class="tab-content">
+                <p><strong>Sterilization Date:</strong> 2/22/2027</p>
+                <p><strong>Sterilization Time:</strong> 6:35 pm</p>
+                <p><strong>Expiration Date:</strong> 3/4/2027</p>
+                <p><strong>Sterilizer ID:</strong> Autoclave 4</p>
+                <p><strong>Cycle Number:</strong> 5</p>
+                <p><strong>Load Type:</strong> Pre-vac Steam</p>
+                <p><strong>Parameters:</strong> 4:5  273° 29 PSI</p>
+                <p><strong>Biological Indicators:</strong> Negative/Passed</p>
+                <p><strong>SPD Tech ID:</strong> Peters, A</p>
+                <p><strong>Contents Verified by:</strong> Thomson, G</p>
+                <img src="logo.png" alt="Logo" class="tab-logo">
+            </div>
+
+
+            <div id="cube-log" class="tab-content">
+                <p><strong>SteriCUBE Part Number:</strong> SC1-300</p>
+                <p><strong>Lot:</strong> 3325</p>
+                <p><strong>Asset Tag Number:</strong> SPD68549</p>
+                <p><strong>Software Version:</strong> 2.1.0</p>
+                <p><strong>Last Service Date:</strong> 1/6/2027</p>
+                <p><strong>Service ID:</strong> J0627-005</p>
+                <p><strong>Calibration Results:</strong> Passed</p>
+                <p><strong>Spore Test Result:</strong> Passed</p>
+                <p><strong>Technician:</strong> J. Dodson</p>
+                <img src="logo.png" alt="Logo" class="tab-logo">
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

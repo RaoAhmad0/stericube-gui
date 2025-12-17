@@ -1,0 +1,242 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.gui-wrapper {
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: none;
+}
+
+.gui-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fb8c00; 
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+/* --- TABS CONTAINER --- */
+.tabs {
+    display: flex;
+    align-items: flex-end; 
+    /* Very compact height */
+    height: 65px; 
+    position: relative;
+    background-color: transparent; 
+    z-index: 10;
+    padding-left: 0;
+    padding-right: 29px;
+    margin-bottom: -2px; 
+}
+
+/* This creates a white block that sits behind the buttons but above the container color */
+.tabs::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: -2; /* Sits behind the tab buttons */
+}
+
+/* --- FULL WIDTH STACK LAYERS --- */
+.stack-background {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0; 
+    pointer-events: none; 
+}
+
+.stack-layer {
+        display: none;
+
+}
+
+/* ULTRA PACKED: 5px Steps */
+
+/* Layer 4 (Purple) - Starts at 0px */
+.stack-layer.purple {
+    top: 0;
+    background: linear-gradient(to bottom, #d1c4e9, #9575cd);
+    z-index: 1;
+}
+
+/* Layer 3 (Pink) - Starts at 5px */
+.stack-layer.pink {
+    top: 5px;
+    background: linear-gradient(to bottom, #f8bbd0, #f06292);
+    z-index: 2;
+}
+
+/* Layer 2 (Orange) - Starts at 10px */
+.stack-layer.orange {
+    top: 10px;
+    background: linear-gradient(to bottom, #ffcc80, #fb8c00);
+    z-index: 3;
+}
+
+
+/* --- TAB BUTTONS --- */
+.tab-btn {
+    flex: 1;
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    margin-right: -30px; 
+    
+    color: #444;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.1;
+    text-align: center;
+    
+    /* Reduced padding for short tabs */
+    padding-top: 15px; 
+    padding-bottom: 5px;
+    margin-left: -25px; 
+    transition: color 0.2s;
+
+ -webkit-tap-highlight-color: transparent;  /* Safari, iOS */
+    -moz-tap-highlight-color: transparent;     /* Firefox (legacy) */
+    -ms-tap-highlight-color: transparent;      /* IE/Edge */
+    tap-highlight-color: transparent;  
+}
+
+.tab-btn:focus {
+    outline: none;
+}
+
+/* Optional: remove active styles on click */
+.tab-btn:active {
+    background: none; /* no background change */
+}
+
+.tab-btn:first-child { 
+    margin-left: -35px; 
+    padding-left: 15px;
+}
+
+.tab-header-with-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-header-with-image h2 {
+    margin: 0;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+}
+
+.tab-header-image {
+    width: 150px;   /* adjust size as needed */
+    height: auto;
+}
+
+
+/* --- INDIVIDUAL TAB HEIGHTS (5px Steps) --- */
+
+/* --- INDIVIDUAL TAB HEIGHTS (SUBTLE STEPS) --- */
+
+.tab-btn:nth-child(2) { height: 54px; z-index: 10; } 
+.tab-btn:nth-child(3) { height: 55px; z-index: 9; }
+.tab-btn:nth-child(4) { height: 56px; z-index: 8; }
+.tab-btn:nth-child(5) { height: 57px; z-index: 7; }
+
+
+
+/* --- TAB SHAPE --- */
+.tab-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    border-radius: 8px 25px 0 0;
+    transform: skewX(20deg);
+    transform-origin: bottom left;
+
+    box-shadow: none;           
+
+    transition: background 0.3s;
+    z-index: -1;
+}
+
+.tab-btn span {
+    display: block;
+    position: relative;
+    left: 5px; 
+    z-index: 2;
+    transform: skewX(-15deg);
+}
+
+/* --- COLORS --- */
+.tab-btn:nth-child(2)::before { background: linear-gradient(to bottom, #fff59d, #fdd835); }
+.tab-btn:nth-child(3)::before { background: linear-gradient(to bottom, #ffcc80, #fb8c00); }
+.tab-btn:nth-child(4)::before { background: linear-gradient(to bottom, #f8bbd0, #f06292); }
+.tab-btn:nth-child(5)::before { background: linear-gradient(to bottom, #d1c4e9, #9575cd); }
+
+
+/* --- ACTIVE STATE --- */
+.tab-btn.active {
+    color: #000;
+}
+
+.tab-btn.active::before {
+    box-shadow: none; 
+    padding-bottom: 20px; 
+}
+
+
+/* --- MAIN CONTENT AREA --- */
+.tab-content {
+    display: none;
+    flex-grow: 1;
+    background-color: inherit;
+padding-left:20px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 20; 
+}
+
+.tab-logo {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 120px;   /* adjust size as needed */
+    height: auto;
+}
+
+.tab-content-with-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  
+}
+
+.tab-text {
+    max-width: 65%;  /* make sure text doesn’t overlap image */
+}
+
+.tab-side-image {
+    width: 250px;    /* fixed width */
+    height: 330px;   /* fixed height */
+}
+
+
+
+
+.tab-content h2 { border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
+.tab-content p { font-size: 16px; margin: 12px 0; font-weight: 500; }
