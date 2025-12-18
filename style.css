@@ -1,20 +1,30 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    display: block; /* remove flex centering */
 }
 
+
 .gui-wrapper {
-    width: 500px;
-    height: 500px;
+    width: 90vw;      /* ⬅️ 90% of viewport width for iPad/desktop */
+    height: 50vh;     /* 50% of viewport height, adjust as needed */
+    
+    max-width: 1200px;   /* optional max-width to prevent it from being too wide on big screens */
+    max-height: 700px;
+
+    min-width: 320px;
+    min-height: 480px;
+
     border-radius: 15px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: none;
+
+    margin: 100px auto 0; /* 100px from top, auto horizontal centering */
 }
+
+
+
 
 .gui-container {
     width: 100%;
@@ -98,7 +108,7 @@ body {
     outline: none;
     margin-right: -30px; 
     
-    color: #444;
+    color: #fff;
     font-weight: 700;
     font-size: 13px;
     line-height: 1.1;
@@ -184,15 +194,24 @@ body {
 }
 
 /* --- COLORS --- */
-.tab-btn:nth-child(2)::before { background: linear-gradient(to bottom, #fff59d, #fdd835); }
-.tab-btn:nth-child(3)::before { background: linear-gradient(to bottom, #ffcc80, #fb8c00); }
-.tab-btn:nth-child(4)::before { background: linear-gradient(to bottom, #f8bbd0, #f06292); }
-.tab-btn:nth-child(5)::before { background: linear-gradient(to bottom, #d1c4e9, #9575cd); }
+/* --- COLORS --- */
+.tab-btn:nth-child(2)::before { 
+    background: linear-gradient(to bottom, #00008B, #00008B); /* Dark Blue */ 
+}
+.tab-btn:nth-child(3)::before { 
+    background: linear-gradient(to bottom, #C0C0C0, #C0C0C0); /* Silver */ 
+}
+.tab-btn:nth-child(4)::before { 
+    background: linear-gradient(to bottom, #000000, #000000); /* Black */ 
+}
+.tab-btn:nth-child(5)::before { 
+    background: linear-gradient(to bottom, #006400, #006400); /* Dark Green */ 
+}
 
 
 /* --- ACTIVE STATE --- */
 .tab-btn.active {
-    color: #000;
+    color: #fff;
 }
 
 .tab-btn.active::before {
@@ -242,8 +261,73 @@ padding-left:20px;
 .tab-content p { font-size: 16px; margin: 12px 0; font-weight: 500; }
 
 /* Increase GUI height for small screens (mobile) */
+/* Increase GUI height for small screens (mobile) */
 @media (max-width: 600px) {
     .gui-wrapper {
-        height: 600px; /* increase height as needed */
+        width: 80vw;   /* keep width smaller for mobile */
+        height: 150vh;  /* increase height a bit for better visibility */
+        margin: 20px auto 0; /* keep top padding consistent */
     }
 }
+
+
+/* --- CUBE CONTENTS TABLE --- */
+.cube-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: transparent;
+}
+
+/* HEADER (keep bold) */
+.cube-table thead th {
+    background: #000;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    font-weight: 700; /* ✅ bold only here */
+}
+
+/* Divider between columns */
+.cube-table thead th:first-child {
+    border-right: 2px solid #fff;
+}
+
+/* BODY ROWS (NOT bold) */
+.cube-table tbody td {
+    background: #e0e0e0;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    font-weight: 400; /* ✅ normal text */
+}
+
+/* Vertical divider */
+.cube-table tbody td:first-child {
+    border-right: 2px solid #fff;
+}
+
+/* Alternate row shading */
+.cube-table tbody tr:nth-child(even) td {
+    background: #f0f0f0;
+}
+
+/* Make all text inside Sterility Info tab white */
+#sterility-info {
+    color: #fff;
+}
+
+/* Optional: keep headings bold */
+#sterility-info strong {
+    font-weight: 700;
+}
+
+/* Make all text inside CUBE Log tab white */
+#cube-log {
+    color: #fff;
+}
+
+/* Optional: keep headings bold */
+#cube-log strong {
+    font-weight: 700;
+}
+

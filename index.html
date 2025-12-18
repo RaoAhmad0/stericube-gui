@@ -19,36 +19,71 @@
                 </div>
 
                 <!-- Cube Contents tab -->
-                <button class="tab-btn active" onclick="openTab(event, 'cube-contents')" data-color="#fdd835">
+                <!-- Cube Contents tab -->
+                <button class="tab-btn active" onclick="openTab(event, 'cube-contents')" data-color="#00008B">
                     <span>CUBE<br>Contents</span>
                 </button>
 
                 <!-- Surgery Info tab -->
-                <button class="tab-btn" onclick="openTab(event, 'surgery-info')" data-color="#fb8c00">
+                <button class="tab-btn" onclick="openTab(event, 'surgery-info')" data-color="#C0C0C0">
                     <span>Surgery<br>Info</span>
                 </button>
 
-                <button class="tab-btn" onclick="openTab(event, 'sterility-info')" data-color="#f48fb1">
+                <!-- Sterility Info tab -->
+                <button class="tab-btn" onclick="openTab(event, 'sterility-info')" data-color="#000000">
                     <span>Sterility<br>Info</span>
                 </button>
-                <button class="tab-btn" onclick="openTab(event, 'cube-log')" data-color="#9575cd">
+
+                <!-- CUBE Log tab -->
+                <button class="tab-btn" onclick="openTab(event, 'cube-log')" data-color="#006400">
                     <span>CUBE<br>Log</span>
                 </button>
+
             </div>
 
             <div id="cube-contents" class="tab-content" style="display: block;">
                 <div class="tab-content-with-image">
                     <div class="tab-text">
-                        <h2>Contents</h2>
-                        <ul>
-                            <li>Femoral preparation tray</li>
-                            <li>Femoral trial tray</li>
-                            <li>Tibial preparation tray</li>
-                            <li>Tibial stem tray</li>
-                            <li>Tibial insert trial tray</li>
-                            <li>Patella preparation tray</li>
-                        </ul>
+                        <table class="cube-table">
+                            <thead>
+                                <tr>
+                                    <th>Contents</th>
+                                    <th>Label Scan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Femoral trial tray</td>
+                                    <td>20261114-082</td>
+                                </tr>
+                                <tr>
+                                    <td>Femoral preparation tray</td>
+                                    <td>20270106-419</td>
+                                </tr>
+                                <tr>
+                                    <td>Tibial preparation tray</td>
+                                    <td>20250930-157</td>
+                                </tr>
+                                <tr>
+                                    <td>Tibial stem tray</td>
+                                    <td>20270227-023</td>
+                                </tr>
+                                <tr>
+                                    <td>Tibial insert trial tray</td>
+                                    <td>20260512-901</td>
+                                </tr>
+                                <tr>
+                                    <td>Tibial resection guide tray</td>
+                                    <td>20270324-556</td>
+                                </tr>
+                                <tr>
+                                    <td>Patella preparation tray</td>
+                                    <td>20251217-312</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                     <div>
                     <img src="tools.png" alt="tools" class="tab-side-image">
                     </div>
