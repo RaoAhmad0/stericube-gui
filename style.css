@@ -263,10 +263,15 @@ padding-left:20px;
 /* Increase GUI height for small screens (mobile) */
 /* Increase GUI height for small screens (mobile) */
 @media (max-width: 600px) {
+.tab-side-image {
+        width: 180px;   /* ⬅️ smaller width on mobile */
+        height: auto;   /* keep aspect ratio */
+    }
     .gui-wrapper {
-        width: 80vw;   /* keep width smaller for mobile */
-        height: 150vh;  /* increase height a bit for better visibility */
-        margin: 20px auto 0; /* keep top padding consistent */
+        width: 96vw;
+        height: 95vh;
+        max-height: none;   /* ✅ IMPORTANT: remove height cap */
+        margin: 20px auto 0;
     }
 }
 
@@ -329,5 +334,16 @@ padding-left:20px;
 /* Optional: keep headings bold */
 #cube-log strong {
     font-weight: 700;
+}
+
+
+
+/* iPad LANDSCAPE */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+    .gui-wrapper {
+        width: 65vw;     /* ⬅️ 60% width on iPad landscape */
+        height: 70vh;    /* optional: slightly taller */
+        margin: 100px auto 0;
+    }
 }
 
