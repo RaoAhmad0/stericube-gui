@@ -273,6 +273,7 @@ padding-left:20px;
         max-height: none;   /* ✅ IMPORTANT: remove height cap */
         margin: 20px auto 0;
     }
+    
 }
 
 
@@ -337,13 +338,76 @@ padding-left:20px;
 }
 
 
+/* iPad LANDSCAPE – tighter gap + wider table */
+@media (min-width: 768px) and (orientation: landscape) {
 
-/* iPad LANDSCAPE */
-@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
     .gui-wrapper {
-        width: 65vw;     /* ⬅️ 60% width on iPad landscape */
-        height: 70vh;    /* optional: slightly taller */
-        margin: 100px auto 0;
+            height: 85vh;          /* ⬅️ MORE HEIGHT */
+            max-height: none;      /* ⬅️ REMOVE CAP */
+            margin-top: 40px;      /* slightly higher */
+        }
+
+        .tab-content {
+            padding-top: 70px;     /* ⬅️ push content down */
+        }
+
+    /* 🔽 LESS SPACE BETWEEN TABLE & IMAGE */
+    .tab-content-with-image {
+        gap: 15px;                 /* was 40px */
+        align-items: flex-start;
+    }
+
+    /* 📊 TABLE — MORE WIDTH */
+    .tab-text {
+        flex: 0 0 55% !important;  /* ⬅️ wider table */
+        max-width: 55% !important;
+    }
+
+    /* 🖼 IMAGE CONTAINER — LESS WIDTH */
+    .tab-image-wrapper {
+        flex: 0 0 45% !important;
+        max-width: 45% !important;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* IMAGE */
+    .tab-side-image {
+        width: 420px !important;
+        max-width: none !important;
+        height: auto !important;
+        margin-top: -50px;
     }
 }
 
+/* iPad PORTRAIT – less gap + wider image */
+@media (min-width: 768px) and (orientation: portrait) {
+
+    /* Slightly taller container for portrait */
+    .gui-wrapper {
+        height: 50vh;
+        max-height: none;
+        margin-top: 60px;
+    }
+
+    /* 🔽 Reduce space between table & image */
+    .tab-content-with-image {
+        gap: 15px;                 /* tighter than default */
+        align-items: flex-start;
+    }
+
+    /* 📊 TABLE — still readable */
+    .tab-text {
+        flex: 0 0 52%;
+        max-width: 52%;
+    }
+
+    /* 🖼 IMAGE — make wider in portrait */
+    .tab-side-image {
+        width: 300px;              /* ⬅️ wider image */
+        max-width: none;
+        height: auto;
+        margin-top: -30px;         /* slight lift */
+    }
+}
